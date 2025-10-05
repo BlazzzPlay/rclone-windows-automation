@@ -1,0 +1,50 @@
+# Logs del sistema
+logs/
+*.log
+*.log.*
+
+# Archivos de configuración con credenciales
+rclone.conf
+config/rclone.conf
+
+# Archivos temporales de Windows
+Thumbs.db
+Desktop.ini
+*.tmp
+*.temp
+
+# Archivos temporales de PowerShell
+*.ps1~
+*.bak
+
+# Caché de Rclone
+cache/
+vfs/
+vfsMeta/
+
+# Archivos de respaldo
+*.backup
+backup/
+
+# Archivos de IDE
+.vscode/
+.vs/
+*.suo
+*.user
+
+# Archivos específicos del sistema
+$RECYCLE.BIN/
+.DS_Store
+
+# Reportes generados
+cache-report-*.txt
+*-report-*.txt
+
+# Archivos de prueba
+test-mount/
+temp/
+testing/
+
+# Archivos específicos del usuario
+user-config.ps1
+personal-settings.ps1

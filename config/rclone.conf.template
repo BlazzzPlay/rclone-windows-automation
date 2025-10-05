@@ -1,0 +1,89 @@
+# Configuración de ejemplo para Rclone
+# Copie este archivo como rclone.conf y configure con sus credenciales reales
+
+# ==============================================================================
+# PELÍCULAS - Google Drive/OneDrive para contenido de Plex
+# ==============================================================================
+[movies]
+type = drive
+client_id = TU_GOOGLE_CLIENT_ID_AQUI
+client_secret = TU_GOOGLE_CLIENT_SECRET_AQUI
+scope = drive
+token = {"access_token":"TOKEN_DE_ACCESO","token_type":"Bearer","refresh_token":"TOKEN_DE_RENOVACION","expiry":"2025-12-31T23:59:59Z"}
+team_drive = ID_DEL_TEAM_DRIVE_PELICULAS
+root_folder_id = 
+server_side_across_configs = false
+disable_http2 = true
+pacer_min_sleep = 100ms
+pacer_burst = 100
+
+# ==============================================================================
+# SERIES - Google Drive/OneDrive para contenido de Plex  
+# ==============================================================================
+[series]
+type = drive
+client_id = TU_GOOGLE_CLIENT_ID_AQUI
+client_secret = TU_GOOGLE_CLIENT_SECRET_AQUI
+scope = drive
+token = {"access_token":"TOKEN_DE_ACCESO","token_type":"Bearer","refresh_token":"TOKEN_DE_RENOVACION","expiry":"2025-12-31T23:59:59Z"}
+team_drive = ID_DEL_TEAM_DRIVE_SERIES
+root_folder_id = 
+server_side_across_configs = false
+disable_http2 = true
+pacer_min_sleep = 100ms
+pacer_burst = 100
+
+# ==============================================================================
+# DOWNLOADS - Para Radarr, Sonarr, qBittorrent
+# ==============================================================================
+[downloads]
+type = drive
+client_id = TU_GOOGLE_CLIENT_ID_AQUI
+client_secret = TU_GOOGLE_CLIENT_SECRET_AQUI
+scope = drive
+token = {"access_token":"TOKEN_DE_ACCESO","token_type":"Bearer","refresh_token":"TOKEN_DE_RENOVACION","expiry":"2025-12-31T23:59:59Z"}
+team_drive = ID_DEL_TEAM_DRIVE_DOWNLOADS
+root_folder_id = 
+server_side_across_configs = false
+disable_http2 = true
+pacer_min_sleep = 50ms
+pacer_burst = 200
+upload_cutoff = 8M
+chunk_size = 8M
+
+# ==============================================================================
+# CONFIGURACIÓN ALTERNATIVA: OneDrive Business
+# ==============================================================================
+# [ucmovie-onedrive]
+# type = onedrive
+# client_id = TU_ONEDRIVE_CLIENT_ID
+# client_secret = TU_ONEDRIVE_CLIENT_SECRET
+# token = {"access_token":"TOKEN","token_type":"Bearer","refresh_token":"REFRESH_TOKEN","expiry":"2025-12-31T23:59:59Z"}
+# drive_id = TU_DRIVE_ID
+# drive_type = business
+
+# ==============================================================================
+# NOTAS DE CONFIGURACIÓN
+# ==============================================================================
+#
+# Para Google Drive:
+# 1. Crear proyecto en Google Cloud Console
+# 2. Habilitar Google Drive API  
+# 3. Crear credenciales OAuth 2.0
+# 4. Ejecutar: rclone config
+# 5. Seguir el asistente de configuración
+#
+# Para OneDrive:
+# 1. Registrar aplicación en Azure AD
+# 2. Configurar permisos Files.ReadWrite.All
+# 3. Ejecutar: rclone config  
+# 4. Seguir el asistente de configuración
+#
+# Parámetros importantes:
+# - team_drive: ID del Team Drive (Google Drive)
+# - drive_id: ID del drive (OneDrive)
+# - pacer_min_sleep: Tiempo mínimo entre requests
+# - pacer_burst: Número de requests en ráfaga
+# - disable_http2: Mejora compatibilidad con algunos proveedores
+#
+# ==============================================================================
